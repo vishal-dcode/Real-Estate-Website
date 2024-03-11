@@ -1,5 +1,4 @@
 import React from "react";
-import heroIMG from "../assets/images/hero_image.png";
 import { HiLocationMarker } from "react-icons/hi";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
@@ -7,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="hero-wrapper">
-      <div className="hero-container container py-3">
+      <div className="hero-container container py-8">
         {/* ------------------------------ Left Section ------------------------------ */}
         <motion.div
           className="hero-left"
@@ -16,11 +15,13 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2, type: "spring" }}
         >
-          <div className="bg-gradient"></div>
           <h1>
             Discover <br /> Most Suitable <br /> Property
           </h1>
-          <p className="ch-small">Find a variety of properties that suit you very easilty Forget all difficulties in finding a residence for you</p>
+          <p className="ch-small">
+            Find a variety of properties that suit you very easilty Forget all
+            difficulties in finding a residence for you.
+          </p>
 
           <div className="search-bar--wrapper">
             <div className="search-bar">
@@ -28,7 +29,6 @@ export default function Hero() {
               <input type="text" />
               <button>Search</button>
             </div>
-            <div className="orange-circle"></div>
           </div>
 
           <div className="c-wrapper pt-3">
@@ -56,15 +56,12 @@ export default function Hero() {
           </div>
         </motion.div>
         {/* ------------------------------ Right Section ----------------------------- */}
-        <motion.div
-          className="hero-right"
-          //info: framer-motion animation
-          initial={{ x: "5rem", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
-        >
-          <div className="img-container">
-            <img src={heroIMG} alt="Hero Image" />
+        <motion.div className="hero-right">
+          <div className="hero-img-container">
+            <img
+              src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Hero Image"
+            />
           </div>
         </motion.div>
       </div>

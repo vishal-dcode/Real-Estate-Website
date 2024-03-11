@@ -39,17 +39,10 @@
 .hero-left {
   position: relative;
 }
-.bg-gradient {
-  position: absolute;
-  height: 200px;
-  aspect-ratio: 1;
-  background: var(--clr-neutral-300);
-  filter: blur(80px);
-  top: -4rem;
-  left: -5rem;
-}
 .hero-wrapper {
-  background: var(--clr-black);
+  position: relative;
+  background: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(0, 0, 0) 80%);
+  overflow: hidden;
 }
 .hero-container {
   display: grid;
@@ -66,21 +59,13 @@
   color: var(--clr-white);
 }
 .hero-left p {
-  color: #797979;
+  color: var(--clr-neutral-300);
   padding-block: 2rem;
 }
 .search-bar--wrapper {
   position: relative;
 }
-.orange-circle {
-  position: absolute;
-  height: 4rem;
-  width: 4rem;
-  background: var(--gradient-2);
-  border-radius: 50%;
-  left: 19rem;
-  top: 2rem;
-}
+
 /*3 Search Bar */
 .search-bar {
   position: relative;
@@ -115,6 +100,20 @@
   color: var(--clr-neutral-400);
 }
 /*2 ------------------------------- Hero Right ------------------------------- */
+.hero-img-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+}
+.hero-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .img-container {
   max-width: 30rem;
   max-height: 40rem;
@@ -134,25 +133,11 @@
 }
 
 /*# ========================================================================== */
-/*#                               Company Section                              */
-/*# ========================================================================== */
-.company-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: var(--spacing-2);
-}
-.company-container img {
-  height: 80px;
-  object-fit: contain;
-  mix-blend-mode: difference;
-}
-
-/*# ========================================================================== */
 /*#                                 Residencies                                */
 /*# ========================================================================== */
 /*3 Title */
 .r-title h4 {
+  padding-top: var(--spacing-4);
   color: var(--clr-secondary-400);
   font-weight: var(--fw-semibold);
 }
@@ -163,33 +148,31 @@
 /*3 Card */
 .r-card {
   cursor: pointer;
-  width: 320px;
+  min-width: 320px;
   border-radius: 0.8rem;
   border: 1px solid var(--clr-neutral-600);
   overflow: hidden;
 }
-.r-card:hover {
-  background: var(--clr-accent-300);
-}
 .r-card-image {
-  height: 200px;
   overflow: hidden;
+  height: 250px;
   object-fit: cover;
-  object-position: center;
+  border-bottom: 1px solid var(--clr-neutral-600);
 }
-.r-card-image img {
-  position: relative;
-  top: -15px;
-}
+
 .r-card-content {
+  background: linear-gradient(45deg, var(--clr-accent-300), rgba(255, 0, 0, 0));
   padding: 1rem 0.8rem 0.8rem;
+}
+.r-card-content:hover {
+  background: var(--clr-accent-300);
 }
 .r-card-content p:nth-of-type(1) {
   font-size: var(--fs-5);
   font-weight: var(--fw-bold);
 }
 .r-card-content p > span {
-  color: var(--clr-secondary-400);
+  color: var(--clr-secondary-400) !important;
 }
 .r-card-content h4 {
   color: var(--clr-primary-400);

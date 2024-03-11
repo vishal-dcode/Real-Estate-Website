@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import data from "../utils/slider.json";
 import { sliderSettings } from "../utils/common";
-import cardIMG from "../assets/images/r1.png";
 
 export default function Residencies() {
   return (
@@ -20,7 +19,7 @@ export default function Residencies() {
                 <div className="r-card">
                   <div>
                     <div className="r-card-image">
-                      <img src={cardIMG} alt="" />
+                      <img src={card.thumbnail} alt="" />
                     </div>
                     <div className="r-card-content flow-xsm">
                       <p>
