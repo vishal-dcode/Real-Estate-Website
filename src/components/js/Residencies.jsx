@@ -1,41 +1,46 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import data from "../utils/slider.json";
-import { sliderSettings } from "../utils/common";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import data from '../utils/slider.json';
+import { sliderSettings } from '../utils/common';
 
 export default function Residencies() {
   return (
-    <section className="r-wrapper">
-      <div className="r-container container">
-        <div className="r-title flow-xsm">
-          <h4>Best Choices</h4>
-          <h3>Popular Residencies</h3>
+    <section className="container my-14 px-5">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h4 className="text-3xl font-bold">Best Choices</h4>
+          <h3 className="text-sm">Popular Residencies</h3>
         </div>
-        <div className="r-slider py-2">
-          <Swiper {...sliderSettings}>
-            {data.map((card, i) => (
-              <SwiperSlide key={i}>
-                <div className="r-card">
-                  <div>
-                    <div className="r-card-image">
-                      <img src={card.thumbnail} alt="" />
-                    </div>
-                    <div className="r-card-content flow-xsm">
-                      <p>
-                        <span>$</span>
-                        {card.price}
-                      </p>
-                      <h4>{card.title}</h4>
-                      <p>{card.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <p className="text-sm max-w-[32ch] text-end">
+          Discover our handpicked selection of the finest rooms available.
+        </p>
       </div>
+      <Swiper {...sliderSettings}>
+        {data.map((card, i) => (
+          <SwiperSlide key={i}>
+            <div className="border border-black overflow-hidden rounded-lg">
+              <div>
+                <figure className="w-full aspect-square border-b border-black">
+                  <img
+                    src={card.thumbnail ? card.thumbnail : 'https://placeholder.com/500'}
+                    alt=""
+                    className="w-full h-full object-cover object-center"
+                  />
+                </figure>
+                <div className="p-3">
+                  <h4 className="text-lg font-bold">{card.title}</h4>
+                  <p className="text-sm mt-1">{card.description}</p>
+                  <p className="text-md font-bold mt-1">
+                    <span>$</span>
+                    {card.price}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

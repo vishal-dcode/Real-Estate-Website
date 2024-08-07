@@ -1,32 +1,30 @@
-import React from "react";
-import logo from "../assets/icons/logo.png";
+import React from 'react';
+import logo from '../assets/icons/logo.png';
+
+const menuItems = ['Home', 'About us', 'Contact'];
 
 export default function Header() {
   return (
-    <section className="h-wrapper ">
-      <div className="h-container container">
-        <img src={logo} alt="logo" width="120" />
+    <section className="w-full bg-black flex justify-center border-b border-white">
+      <div className=" container flex gap-4 items-center justify-between py-4 px-5">
+        <img className="translate-y-[8px]" src={logo} alt="logo" width="160" />
 
-        <div className="h-nav-wrapper">
-          <nav className="h-menu">
-            <a href="#" className="h-menu_item">
-              Residencies
+        <nav className="flex gap-8 items-center justify-between">
+          {menuItems.map((item, idx) => (
+            <a
+              key={idx}
+              href="/"
+              className=" max-sm:hidden text-white cursor-pointer font-medium uppercase text-sm hover:text-blue-600">
+              {item}
             </a>
-            <a href="#" className="h-menu_item">
-              Our Value
-            </a>
-            <a href="#" className="h-menu_item">
-              Contact Us
-            </a>
-            <a href="#" className="h-menu_item">
-              Get Started
-            </a>
-          </nav>
+          ))}
 
-          <a href="#" className="btn">
-            Contact
+          <a
+            href="#"
+            className="border border-white hover:bg-neutral-900 p-3 px-5 rounded-full text-white cursor-pointer font-medium uppercase text-sm">
+            Get Started
           </a>
-        </div>
+        </nav>
       </div>
     </section>
   );

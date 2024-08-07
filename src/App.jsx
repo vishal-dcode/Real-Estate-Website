@@ -1,26 +1,21 @@
-import react from "react";
-import "./components/css/main.css";
-import "./components/css/stylesheet.css";
-import Header from "./components/js/Header";
-import Hero from "./components/js/Hero";
-import Residencies from "./components/js/Residencies";
-import Value from "./components/js/Value";
-import Contact from "./components/js/Contact";
-import GetStarted from "./components/js/GetStarted";
-import Footer from "./components/js/Footer";
+import './components/css/main.css';
+import Header from './components/js/Header';
+import Hero from './components/js/Hero';
+import Residencies from './components/js/Residencies';
+import Value from './components/js/Value';
+import Footer from './components/js/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <main className="flex flex-col items-center justify-between">
       <Header />
       <Hero />
       <Residencies />
       <Value />
-      <Contact />
-      <GetStarted />
       <Footer />
-    </div>
+    </main>
   );
 }
 
 export default App;
+

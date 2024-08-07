@@ -1,70 +1,79 @@
-import React from "react";
-import { HiLocationMarker } from "react-icons/hi";
-import CountUp from "react-countup";
-import { motion } from "framer-motion";
+import React from 'react';
+import { TbCurrentLocation } from 'react-icons/tb';
+import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="hero-wrapper">
-      <div className="hero-container container py-8">
-        {/* ------------------------------ Left Section ------------------------------ */}
-        <motion.div
-          className="hero-left"
-          //info: framer-motion animation
-          initial={{ y: "2rem", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
-        >
-          <h1>
-            Discover <br /> Most Suitable <br /> Property
-          </h1>
-          <p className="ch-small">
-            Find a variety of properties that suit you very easilty Forget all
-            difficulties in finding a residence for you.
-          </p>
+    <>
+      <section
+        className="px-5 overflow-hidden relative h-[90vh] w-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1519375722682-222902a76bf6?q=80&w=2101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          zIndex: -1
+        }}>
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: 'linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95))',
+            zIndex: -1
+          }}></div>
+        <div className="relative container text-white">
+          {/* ------------------------------ Left Section ------------------------------ */}
+          <motion.div
+            initial={{ y: '2rem', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 2, type: 'spring' }}>
+            <div className="block z-1" style={{ position: 'relative', zIndex: 1 }}>
+              <h1 className="text-6xl font-semibold">
+                Discover <br /> Most Suitable <br /> Property
+              </h1>
+              <p className="text-md mt-4 max-w-[54ch]">
+                Find a variety of properties that suit you very easilty Forget all difficulties in finding a residence
+                for you.
+              </p>
 
-          <div className="search-bar--wrapper">
-            <div className="search-bar">
-              <HiLocationMarker color="var(--clr-accent-400)" size={25} />
-              <input type="text" />
-              <button>Search</button>
+              <div className="flex gap-1 relative mt-4">
+                <TbCurrentLocation
+                  size={25}
+                  className="absolute top-1/2 -translate-y-1/2 left-[12px] text-neutral-600"
+                />
+                <input
+                  placeholder="Search Locations..."
+                  type="text"
+                  className="outline-none border bg-neutral-200 border-black rounded-lg p-3 px-1 pl-[45px] text-black"
+                />
+                <button className="bg-blue-600 px-5 border border-black rounded-lg">Search</button>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="c-wrapper pt-3">
-            <div className="c-container">
-              <span>
-                <CountUp start={8000} end={9000} duration={4} />
-                <span>+</span>
+          <motion.div className="flex gap-10 mt-8">
+            <div>
+              <span className="flex items-center gap-1 pb-1">
+                <CountUp start={8000} end={9000} duration={4} className="text-4xl font-semibold" />
+                <span className="text-4xl font-semibold">+</span>
               </span>
-              <span>Premium Product</span>
+              <span className="text-md font-semibold">Premium Product</span>
             </div>
-            <div className="c-container">
-              <span>
-                <CountUp start={1500} end={2000} duration={4} />
-                <span>+</span>
+            <div>
+              <span className="flex items-center gap-1 pb-1">
+                <CountUp start={1500} end={2000} duration={4} className="text-4xl font-semibold" />
+                <span className="text-4xl font-semibold">+</span>
               </span>
-              <span>Happy Customer</span>
+              <span className="text-md font-semibold">Happy Customer</span>
             </div>
-            <div className="c-container">
-              <span>
-                <CountUp start={12} end={28} duration={4} />
-                <span>+</span>
+            <div>
+              <span className="flex items-center gap-1 pb-1">
+                <CountUp start={12} end={28} duration={4} className="text-4xl font-semibold" />
+                <span className="text-4xl font-semibold">+</span>
               </span>
-              <span>Awards Winning</span>
+              <span className="text-md font-semibold">Awards Winning</span>
             </div>
-          </div>
-        </motion.div>
-        {/* ------------------------------ Right Section ----------------------------- */}
-        <motion.div className="hero-right">
-          <div className="hero-img-container">
-            <img
-              src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Hero Image"
-            />
-          </div>
-        </motion.div>
-      </div>
-    </section>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
